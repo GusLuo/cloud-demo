@@ -1,0 +1,27 @@
+server:
+  port: 8081
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/aclec?useSSL=false
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+  application:
+    name: userservice # eureka的服务名称   
+  cloud:
+    nacos:
+      server-addr: localhost:80 # nacos地址
+mybatis:
+  type-aliases-package: cn.com.cloud.domain
+  configuration:
+    map-underscore-to-camel-case: true
+logging:
+  level:
+    cn.com: debug
+  pattern:
+    dateformat: MM-dd HH:mm:ss:SSS
+    
+#eureka:
+ # client:
+  #  service-url:  # eureka的地址信息
+   #   defaultZone: http://127.0.0.1:10086/eureka
